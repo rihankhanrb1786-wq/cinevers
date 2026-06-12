@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --brand: #e50914;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; background: #070707; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(111, 8, 15, .12), transparent 25rem),
+    #070707;
+  color: #f5f5f5;
+  font-family: var(--font-inter), Arial, sans-serif;
+}
+button, input, textarea, select { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+::selection { background: rgba(229, 9, 20, .55); color: white; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #090909; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+
+.hero-mask {
+  background:
+    linear-gradient(90deg, #070707 0%, rgba(7,7,7,.92) 27%, rgba(7,7,7,.38) 58%, rgba(7,7,7,.08) 78%),
+    linear-gradient(0deg, #070707 0%, transparent 36%),
+    linear-gradient(180deg, rgba(7,7,7,.35), transparent 30%);
+}
+
+.poster-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at var(--x, 70%) var(--y, 25%), var(--glow, #9d1720) 0, transparent 28%),
+    linear-gradient(145deg, transparent 15%, rgba(255,255,255,.08) 16%, transparent 17%),
+    linear-gradient(160deg, var(--c1, #2a0c0f), var(--c2, #060606) 70%);
+}
+.poster-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,.82), transparent 55%);
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (max-width: 768px) {
+  .hero-mask {
+    background:
+      linear-gradient(0deg, #070707 2%, rgba(7,7,7,.15) 55%, rgba(7,7,7,.25)),
+      linear-gradient(90deg, rgba(7,7,7,.7), rgba(7,7,7,.05));
+  }
+}
+
