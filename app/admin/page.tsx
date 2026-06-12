@@ -7,7 +7,7 @@ export default function AdminPage() {
 const [message, setMessage] = useState("");
 const [videoFile, setVideoFile] = useState<File | null>(null);
 
-async function submit(e: React.FormEvent) {
+async function submit(e: React.FormEvent<HTMLFormElement>) {
 e.preventDefault();
 
 ```
@@ -36,13 +36,20 @@ if (error) {
   return;
 }
 
-setMessage("✅ Video uploaded successfully!");
+setMessage("Video uploaded successfully!");
 ```
 
 }
 
 return (
-<div style={{ padding: "30px", color: "white", background: "black", minHeight: "100vh" }}> <h1>CINEVERS ADMIN</h1>
+<div
+style={{
+padding: "30px",
+color: "white",
+background: "black",
+minHeight: "100vh",
+}}
+> <h1>CINEVERS ADMIN</h1>
 
 ```
   <form onSubmit={submit}>
@@ -55,9 +62,7 @@ return (
     <br />
     <br />
 
-    <button type="submit">
-      Upload Video
-    </button>
+    <button type="submit">Upload Video</button>
   </form>
 
   <p>{message}</p>
